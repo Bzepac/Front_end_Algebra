@@ -13,9 +13,9 @@
             
 body{
 
-
-
-    background-image: linear-gradient(to right, #2d2d2d, #250716);
+    
+  background-size: cover;
+    background-image: url('1.jpeg');
 }
                 table {
                     align-self: center;
@@ -39,10 +39,15 @@ body{
                 .dropbtn {
   
                     background-color: transparent;
-                    font-size:x-large;
+                    
+
   
   border: none;
 }
+.dropbtn:hover { font-size: x-large;
+}
+ 
+  
 
 .dropdown {
     font-size:x-large;
@@ -54,7 +59,7 @@ body{
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #2d2d2d;
+  background-image: linear-gradient(to right, #af4474 , #2d4b65 );
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -66,10 +71,16 @@ body{
   text-decoration: none;
   display: block;
 }
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #2d4b65;}
 
 .dropdown:hover .dropdown-content {display: block;}
+.logo {
 
+  align-items: left;
+
+
+
+}
 
 
     </style>
@@ -81,17 +92,17 @@ body{
     
 
     <table >
-       <th >
-
+       <th  >
+        <td width="20%"><img  src="2.png" alt="logo"></td>
+         <td style="border-right-style: solid; border-left-style: solid;
+         border-right-color: black; width:20%; "><b>Home</b></td>
+         <td style="border-right-style: solid;; 
+         border-right-color: black; width:20%; "><b>News</b></td>
          <td style="border-right-style: solid;
-         border-right-color: black; width:25%; ">Home</td>
-         <td style="border-right-style: solid; width:25%; 
-         border-right-color: black; width:25%; ">News</td>
-         <td style="border-right-style: solid;
-         border-right-color: black; width:25%; ">Shop</td>
-         <td style="width:25% ;">
+         border-right-color: black; width:20%; "><b>Shop</b></td>
+         <td style="width:20% ;">
             <div class="dropdown">
-                <button class="dropbtn" style="font-family: 'Source Sans Pro', sans-serif; font-size: x-large;text-transform: uppercase; " >Contact</button>
+                <button class="dropbtn" style="font-family: 'Source Sans Pro', sans-serif; font-size: large;text-transform: uppercase; " ><b>Contact</b></button>
                 <div class="dropdown-content">
                   <a href="#">Link 1</a>
                   <a href="#">Link 2</a>
