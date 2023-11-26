@@ -1,0 +1,117 @@
+
+.wrapper{
+padding: 10px;
+display: flex;
+
+}
+
+
+.parent{
+ 
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    animation-direction: reverse;
+
+
+}
+
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: burlywood;
+    border-radius: 25%;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+
+
+}
+
+
+.parent:hover #box1{
+
+    animation: b1 0.79s ease-in-out 0.54s forwards;
+    
+
+    
+}
+
+
+.parent:hover #box2{
+   
+    animation: b2 0.54s ease-out 0.27s forwards;
+    
+}
+
+.parent:hover #box3{
+
+    animation: b3 0.27s ease-out forwards;
+    
+}
+.parent:hover #box4{
+
+    animation: b4 0.2s alternate infinite;
+    animation-iteration-count: 6;
+}
+.parent:not(:hover) #box1{
+
+    
+    
+    animation: b6 0.54s ease-in-out 0.27s backwards;
+    
+}
+.parent:not(:hover) #box2{
+
+    
+    animation: b7 0.27s ease-in-out 0.54s backwards;
+
+    
+}
+.parent:not(:hover) #box3{
+
+    animation:  b5 0.79s ease-in-out 0.54s backwards;
+    
+
+    
+}
+
+
+@keyframes b1 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(100px);}
+}
+
+@keyframes b2 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(200px);}
+}
+@keyframes b3 {
+    0%{ transform: translateX(0);}
+    100%{ transform: translateX(300px);}
+}
+@keyframes b4 {
+    
+    0%{ transform: scale(100%)}
+    100%{transform: scale(110%)}
+
+}
+@keyframes b5 {
+    0%{ transform: translateX(300px);}
+    100%{ transform: translateX(0);}
+}
+@keyframes b6 {
+    0%{ transform: translateX(100px);}
+    100%{ transform: translateX(0);}
+}
+@keyframes b7 {
+    0%{ transform: translateX(200px);}
+    100%{ transform: translateX(0);}
+}
+
+
