@@ -1,0 +1,67 @@
+body {
+  font-family: "Helvetica", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.header {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.int {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+.todoList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todoList li {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoList li.done {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.removeButton {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}
