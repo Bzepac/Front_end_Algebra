@@ -15,7 +15,7 @@ trazilica.addEventListener("input", function () {
 
   p.forEach((p) => {
     const username = p.textContent.toLowerCase();
-    if (username.includes(textinput)) {
+    if (username.includes(textinput) && textinput !== "") {
       p.className = "show";
     } else {
       p.className = "hide";
