@@ -1,51 +1,44 @@
-let i = 0;
 let trazilica = document.querySelector("#search");
-let loading = document.createElement("p");
+let loading = document.querySelector(".labelo");
 
-document.querySelector("body").appendChild(loading);
-const allp = document.querySelectorAll("p");
-allp.forEach((p) => {
-  p.className = "hide";
-});
+let resultsContainer = document.createElement("div");
+document.querySelector("body").appendChild(resultsContainer);
 
 trazilica.addEventListener("input", function () {
   const textinput = trazilica.value.toLowerCase();
   console.log(textinput);
-  const p = document.querySelectorAll("p");
+  loading.textContent = "Loading...";
+      
+  resultsContainer.innerHTML = "";
 
-  p.forEach((p) => {
-    const username = p.textContent.toLowerCase();
-    if (username.includes(textinput) && textinput !== "") {
-      p.className = "show";
-    } else {
-      p.className = "hide";
-    }
-  });
+  fetch(`https://itunes.apple.com/search?term=${textinput}&entity=song`)
+    .then((response) => {
+      
+      if (!response.ok) {
+        throw new Error("Nev valja");
+      } else {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      let reverseResults = data.results.reverse();
+      reverseResults.forEach((result) => {
+        
+        console.log(result);
+        let text = document.createElement("p");
+
+        const artistName = result.artistName;
+        const song = result.trackName;
+
+        text.textContent = artistName + " - " + song;
+        resultsContainer.appendChild(text);
+        loading.textContent = "";
+      });
+    })
+    .catch((error) => {
+      
+      loading.textContent = "No results";
+      
+      console.error(error)});
+    
 });
-
-fetch("https://randomuser.me/api/?results=2000")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Nev valja");
-    } else {
-      return response.json();
-    }
-  })
-  .then((data) => {
-    document.querySelector(".labelo").textContent = "Type to search";
-
-    data.results.forEach((artist) => {
-      console.log(data.results);
-      let text = document.createElement("p");
-      text.className = "hide";
-
-      const firstUsername = artist.name.first;
-      const lastUsername = artist.name.last;
-      const gender = artist.gender;
-      text.textContent = firstUsername + " " + lastUsername + " " + gender;
-      console.log(artist.name.first);
-      document.querySelector("body").appendChild(text);
-    });
-  })
-
-  .catch((error) => console.error(error));
