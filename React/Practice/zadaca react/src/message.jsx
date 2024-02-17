@@ -1,6 +1,5 @@
 function message() {
-  x = "Hello  world! I'm Boris";
-  return x;
+  return "Hello  world! I'm Boris";
 }
 
 export default message;

@@ -6,6 +6,7 @@ function Header() {
       <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
       <h1>{ime()}</h1>
       <p>{prezime}</p>
+      <p>{godine}</p>
       <p>{message()}</p>
     </header>
   );
@@ -15,7 +16,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <main>{godine}</main>
+      <main></main>
     </div>
   );
 }
