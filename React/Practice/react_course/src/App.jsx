@@ -1,11 +1,15 @@
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
+import TabButton from "./components/TabButton.jsx";
 function App() {
+  function handleSelect() {
+    console.log(children);
+  }
   return (
     <div>
       <Header />
-      <main id="core-concepts">
+      <section id="core-concepts">
         <ul>
           <CoreConcept
             title={CORE_CONCEPTS[0].title}
@@ -28,7 +32,25 @@ function App() {
             img={CORE_CONCEPTS[3].image}
           ></CoreConcept>
         </ul>
-      </main>
+      </section>
+      <section id="examples">
+        <h2>Examples</h2>
+        <menu>
+          <li>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
+          </li>
+          <li>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+          </li>
+          <li>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+          </li>
+          <li>
+            <TabButton onSelect={handleSelect}>State</TabButton>
+          </li>
+        </menu>
+        <div></div>
+      </section>
     </div>
   );
 }
